@@ -1,0 +1,42 @@
+def operation(a, x, y):
+if a == "1":
+return x + y
+elif a == "2":
+return x - y
+elif a == "3":
+return x * y
+elif a == "4":
+if y != 0:
+return x / y
+else:
+return "Cannot divide by zero."
+else:
+return "Invalid operation."
+
+def calculator():
+print("Simple Calculator")
+print("Operations:")
+print("1. Addition (+)")
+print("2. Subtraction (-)")
+print("3. Multiplication (*)")
+print("4. Division (/)")
+print("5. Exit")
+
+while True:
+try:
+num1 = float(input("Enter the first number: "))
+a = input("Enter the operation number (1-5): ")
+
+if a == "5":
+print("Exiting the calculator...")
+break
+
+num2 = float(input("Enter the second number: "))
+result = operation(a, num1, num2)
+print(f"Result: {result}")
+
+except ValueError:
+print("Invalid input. Please enter valid numbers.")
+
+if __name__ == "__main__":
+calculator()
